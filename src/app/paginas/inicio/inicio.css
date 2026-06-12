@@ -1,0 +1,395 @@
+/* ==========================================================================
+   CONFIGURAÇÃO DE CORES GERAIS DA PÁGINA (TEMA BLACK)
+   ========================================================================== */
+:host {
+  display: block;
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Força o fundo preto no escopo global enquanto este componente estiver ativo */
+html, body {
+  background-color: #0d0d0d !important;
+}
+
+/* ==========================================================================
+   MARCA D'ÁGUA LATERAL EM CAIXA ALTA (AQUI ESTÁ A CHAVE)
+   ========================================================================== */
+.brand-watermark {
+  position: fixed;         /* Fica fixa na tela durante o scroll */
+  top: 0;
+  left: 0.5rem;            /* Alinhada no canto esquerdo com um pequeno recuo */
+  width: 80px;
+  height: 100vh;
+  z-index: 1;              /* Fica por trás de quase tudo, mas visível */
+  pointer-events: none;    /* Impede que atrapalhe cliques em links ou botões */
+  user-select: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.brand-watermark span {
+  font-family: 'Cormorant Garamond', serif; /* Use a fonte principal para consistência */
+  font-size: 3rem;         /* Tamanho gigante imponente */
+  font-weight: 600;
+  letter-spacing: 5rem;    /* Espaçamento chic entre as palavras */
+  color: rgba(255, 255, 255, 0.05); /* Apenas 2% de opacidade, super sutil */
+  writing-mode: vertical-rl; /* Gira o texto para ficar vertical */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.4) 0%,
+    rgba(13, 13, 13, 0.2) 40%,
+    rgba(13, 13, 13, 0.9) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 1.5rem;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+  color: #ffffff !important;
+}
+
+.hero p {
+  max-width: 480px;
+  font-weight: 300;
+  color: #f4f4f2;
+  margin-bottom: 2.2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+}
+
+/* ==========================================================================
+   SHOWCASE SECTION (Vitrine)
+   ========================================================================== */
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 4rem 6rem 7rem; /* Recuo para não cobrir a marca d'água */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.showcase-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 1rem 0 1.5rem;
+  color: #ffffff;
+}
+
+.showcase-text p {
+  color: #8a8a8a;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  max-width: 440px;
+}
+
+.showcase-img {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5);
+}
+
+.showcase-img img {
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.showcase-img:hover img {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   FASHION DIVIDER (A Ponte Decorativa)
+   ========================================================================== */
+.fashion-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 80px 10% 80px 12%; 
+}
+
+.fashion-divider::before, .fashion-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.fashion-divider:not(:empty)::before { margin-right: .5em; }
+.fashion-divider:not(:empty)::after { margin-left: .5em; }
+
+.fashion-divider span {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: #8a8a8a;
+}
+
+/* ==========================================================================
+   ABOUT RUNWAY (História e Filosofia)
+   ========================================================================== */
+.about-runway {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px 0 7rem; /* Recuo para alinhar com a marca d'água */
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #8a8a8a;
+}
+
+.about-image {
+  flex: 1;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   TIMELINE SECTION
+   ========================================================================== */
+.timeline-section {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.timeline-item {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 8px;
+  text-align: left;
+  border-top: 4px solid #ffffff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.timeline-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #8a8a8a;
+}
+
+/* ==========================================================================
+   BUTTONS & CTA
+   ========================================================================== */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  color: #0d0d0d;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: #2c2c2c;
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 1.1rem 2.8rem;
+  font-size: 0.95rem;
+}
+
+.btn-primary3 {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+}
+
+.btn-primary3:hover {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.cta {
+  text-align: center;
+  padding: 6rem 1.5rem;
+}
+
+.cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cta p {
+  color: #8a8a8a;
+  font-weight: 300;
+  margin-bottom: 2.2rem;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 900px) {
+  .brand-watermark { display: none; }
+  .showcase, .about-runway { padding-left: 1.5rem !important; }
+  .showcase {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 2.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-row, .about-row.reverse {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  .timeline-grid { grid-template-columns: 1fr; }
+  .about-image { height: 300px; width: 100%; }
+}

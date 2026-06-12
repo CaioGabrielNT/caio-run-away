@@ -1,0 +1,739 @@
+/* ================================================================
+   [DESIGN SYSTEM - FASHION E-COMMERCE LUMINA]
+   ================================================================ */
+
+:root {
+  /* Cores Temáticas - Lumina (Baseadas na paleta original de moda) */
+  --cor-fundo: #ffff;          /* Bege clarinho (Off-white) */
+  --cor-escuro: #162c46;         /* Azul profundo e sofisticado */
+  --cor-texto: #162c46;          /* Azul principal */
+  --cor-texto-suave: #3a5370;    /* Azul intermediário */
+  --cor-cinza: #888;
+  --cor-borda: #e5e5e5;
+  --cor-acento: #eab308;         /* Amarelo dourado */
+  --cor-acento-claro: #fef9c3;   /* Amarelo claro para badges */
+  --cor-acento-hover: #ca8a04;   /* Amarelo mais escuro */
+  --cor-sucesso: #22c55e;
+  --cor-erro: #ef4444;
+  --cor-aviso: #f59e0b;
+
+  /* Fontes do Sistema */
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-corpo: 'DM Sans', sans-serif;
+
+  /* Espaçamentos Padronizados */
+  --espaco-xs: 4px;
+  --espaco-sm: 8px;
+  --espaco-md: 16px;
+  --espaco-lg: 24px;
+  --espaco-xl: 40px;
+  --espaco-2xl: 60px;
+
+  /* Bordas Arredondadas e Sombras Complexas (padrão base) */
+  --raio: 12px;
+  --raio-sm: 8px;
+  --raio-pill: 100px;
+  --sombra-sm: 0 2px 8px rgba(22, 44, 70, 0.04);
+  --sombra-md: 0 4px 24px rgba(22, 44, 70, 0.08);
+  --sombra-lg: 0 12px 48px rgba(22, 44, 70, 0.14);
+
+  /* Transição Suave */
+  --transicao: 0.25s ease;
+}
+
+/* ================================================================
+   2. RESET — Zerando estilos nativos do navegador
+   ================================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--fonte-corpo);
+}
+
+input,
+textarea,
+select {
+  font-family: var(--fonte-corpo);
+}
+
+/* ================================================================
+   3. CABEÇALHO GLOBAL (FLEXBOX DINÂMICO)
+   ================================================================ */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background-color: #ffffff; /* Fundo de card para se destacar do fundo bege */
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+  color: var(--cor-texto);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--cor-acento);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-lista {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  transition: color var(--transicao);
+}
+
+.nav-link:hover,
+.nav-link.ativo {
+  color: var(--cor-acento-hover);
+}
+
+/* ================================================================
+   5. BOTÕES COM DESIGN SYSTEM
+   ================================================================ */
+.btn-primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--cor-acento);
+  color: var(--cor-escuro);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--raio-pill);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.btn-primario:hover {
+  background-color: var(--cor-acento-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--cor-texto);
+  border: 1.5px solid var(--cor-borda);
+  padding: 11px 24px;
+  border-radius: var(--raio-pill);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: border-color var(--transicao), color var(--transicao), transform var(--transicao);
+}
+
+.btn-secundario:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento);
+  transform: translateY(-2px);
+}
+
+.btn-sair {
+  background-color: transparent;
+  border: 1.5px solid var(--cor-texto);
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--raio-pill);
+  transition: background-color var(--transicao), color var(--transicao);
+}
+
+.btn-sair:hover {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+}
+
+/* ================================================================
+   6. CAMPOS DE ENTRADA DE FORMULÁRIO (INPUTS E BOX MODEL)
+   ================================================================ */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  letter-spacing: 0.3px;
+}
+
+.campo-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  font-size: 15px;
+  color: var(--cor-texto);
+  background-color: #fff;
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+  outline: none;
+}
+
+.campo-input:focus {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.12);
+}
+
+.campo-input::placeholder {
+  color: #bbb;
+}
+
+/* ================================================================
+   7. BADGES / TAGS UTILITÁRIAS
+   ================================================================ */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--raio-pill);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+}
+
+.badge-laranja {
+  background-color: var(--cor-acento-claro);
+  color: var(--cor-acento-hover);
+}
+
+.badge-verde {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.badge-cinza {
+  background-color: #f1f1ef;
+  color: var(--cor-texto-suave);
+}
+
+.badge-azul {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+/* ================================================================
+   8. ANIMAÇÕES DE TRANSIÇÃO (KEYFRAMES)
+   ================================================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes subirFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes escalarEntrar {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animar-fade {
+  animation: fadeIn 0.5s ease both;
+}
+
+.animar-subir {
+  animation: subirFadeIn 0.5s ease both;
+}
+
+.animar-escalar {
+  animation: escalarEntrar 0.4s ease both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ================================================================
+   9. DIVISOR DECORATIVO CONCEITUAL
+   ================================================================ */
+.divisor {
+  position: relative;
+  text-align: center;
+  margin: var(--espaco-lg) 0;
+}
+
+.divisor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--cor-borda);
+}
+
+.divisor span {
+  position: relative;
+  background-color: var(--cor-fundo);
+  padding: 0 12px;
+  font-size: 13px;
+  color: var(--cor-cinza);
+}
+
+/* ================================================================
+   HERO BANNER — Lumina Fashion Banner
+   ================================================================ */
+.moda-banner {
+  background-image: url("../public/Imagem.runway.jpeg");
+  color: #ffffff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.moda-banner-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cor-acento);
+  font-weight: 500;
+  animation: subirFadeIn 0.5s ease both;
+}
+
+.moda-banner-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 52px;
+  max-width: 600px;
+  line-height: 1.15;
+  animation: subirFadeIn 0.5s ease 0.1s both;
+}
+
+.moda-banner-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 480px;
+  line-height: 1.7;
+  animation: subirFadeIn 0.5s ease 0.2s both;
+}
+
+.banner-numero-fundo {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--fonte-titulo);
+  font-size: 220px;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ================================================================
+   BARRA DE CONTROLES E FILTROS (STICKY)
+   ================================================================ */
+.moda-controles {
+  padding: 32px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
+  position: sticky;
+  top: 73px; /* Gruda logo abaixo do Header */
+  z-index: 90;
+  animation: fadeIn 0.4s ease both;
+}
+
+.busca-container {
+  position: relative;
+  max-width: 480px;
+}
+
+.busca-icone {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cor-texto-suave);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.busca-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-pill);
+  font-size: 14px;
+  color: var(--cor-texto);
+  background-color: #fff;
+  outline: none;
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.busca-input:focus {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.10);
+}
+
+.filtros-lista {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 7px 18px;
+  border-radius: var(--raio-pill);
+  border: 1.5px solid var(--cor-borda);
+  background-color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition: all var(--transicao);
+}
+
+.filtro-btn:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento);
+}
+
+.filtro-btn.ativo {
+  background-color: var(--cor-acento);
+  border-color: var(--cor-acento);
+  color: var(--cor-escuro);
+}
+
+/* ================================================================
+   VITRINE / GRADE DE PRODUTOS
+   ================================================================ */
+.vitrine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+
+.vitrine-titulo {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--cor-texto-suave);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.vitrine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ================================================================
+   CARDS DE PRODUTO
+   ================================================================ */
+.card-produto {
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transicao), transform var(--transicao);
+  animation: subirFadeIn 0.5s ease both;
+}
+
+.card-produto:hover {
+  box-shadow: var(--sombra-lg);
+  transform: translateY(-5px);
+}
+
+.imagem-wrapper {
+  aspect-ratio: 4/5;
+  background-color: #f0ebe1; /* Bege secundário */
+  overflow: hidden;
+  position: relative;
+}
+
+.imagem-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-produto:hover .imagem-wrapper img {
+  transform: scale(1.05);
+}
+
+.tag-destaque {
+  position: absolute;
+  top: var(--espaco-md);
+  right: var(--espaco-md);
+  background-color: var(--cor-acento);
+  color: var(--cor-escuro);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: var(--raio-sm);
+  z-index: 1;
+}
+
+.info-produto {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.categoria {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nome-produto {
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--cor-texto);
+  transition: color var(--transicao);
+}
+
+.card-produto:hover .nome-produto {
+  color: var(--cor-acento-hover);
+}
+
+.descricao-produto {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cor-texto-suave);
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.produto-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.preco {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+/* ================================================================
+   CARD PRODUTO EM DESTAQUE (HORIZONTAL)
+   ================================================================ */
+.card-produto.destaque {
+  grid-column: span 2;
+  flex-direction: row;
+}
+
+.card-produto.destaque .imagem-wrapper {
+  width: 45%;
+  height: auto;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+}
+
+.card-produto.destaque .nome-produto {
+  font-size: 24px;
+}
+
+.card-produto.destaque .descricao-produto {
+  -webkit-line-clamp: 4;
+}
+
+/* ================================================================
+   PAGINAÇÃO (FLEXBOX CENTRALIZADO)
+   ================================================================ */
+.paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 60px;
+  border-top: 1px solid var(--cor-borda);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.paginacao-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--raio-sm);
+  border: 1.5px solid var(--cor-borda);
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  transition: all var(--transicao);
+}
+
+.paginacao-btn:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento-hover);
+}
+
+.paginacao-btn.ativo {
+  background-color: var(--cor-acento);
+  border-color: var(--cor-acento);
+  color: var(--cor-escuro);
+}
+
+/* ================================================================
+   RODAPÉ GLOBAL (ESTILOS COMPARTILHADOS)
+   ================================================================ */
+.rodape {
+  background-color: var(--cor-escuro);
+  color: #888;
+  text-align: center;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.rodape-logo {
+  font-family: var(--fonte-titulo);
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.rodape-logo span {
+  color: var(--cor-acento);
+}
+
+.rodape-texto {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ================================================================
+   10. RESPONSIVIDADE (MEDIA QUERIES)
+   ================================================================ */
+@media (max-width: 992px) {
+  .vitrine {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cabecalho {
+    padding: 20px 30px;
+  }
+  .moda-banner {
+    padding: 60px 30px;
+  }
+  .moda-controles {
+    padding: 24px 30px;
+    top: 79px;
+  }
+  .vitrine-container {
+    padding: 32px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vitrine {
+    grid-template-columns: 1fr;
+  }
+  .cabecalho {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  .moda-controles {
+    top: 134px;
+  }
+  .card-produto.destaque {
+    grid-column: span 1 !important;
+    flex-direction: column !important;
+  }
+  .card-produto.destaque .imagem-wrapper {
+    width: 100% !important;
+  }
+}

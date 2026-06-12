@@ -1,0 +1,233 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-titulo)
+    
+}
+
+body {
+    background-color: #fcfbfa; /* Off-white de fundo do seu site */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #fcfbfa;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.logo span {
+    color: #cca43b; /* Ponto dourado do logo Runway */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1a1a1a;
+}
+
+.nav-links .btn-sacola {
+    border: 1px solid #1a1a1a;
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: #1a1a1a;
+}
+
+/* Container do Card */
+.main-container {
+    background-color: rgb(0, 0, 0);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 131px;
+    position: relative;
+    overflow: hidden;
+}
+
+.frase-runway-fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255); /* Preto com baixa opacidade para efeito de fundo */
+    font-size: 22vw;
+    max-width: 100vw;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 0; /* Permite clicar nos elementos acima do texto de fundo */
+}
+
+.card-register {
+    background: #ffffffec;
+    width: 850px;
+    max-width: 100%;
+    height: 600px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.363);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    padding: 25px;
+    gap: 20px;z-index: 999;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Seção do Formulário (Esquerda) */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    position: relative;
+}
+
+.form-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #000000;
+}
+
+/* Botão Submit (Roxo da imagem) */
+.btn-submit {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: rgba(114, 47, 55, 1.0);
+}
+
+/* Alternar entre páginas */
+.switch-page {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.switch-page a {
+    color: #0f0809; /* Tom avermelhado/rosa do link da imagem */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-page a:hover {
+    text-decoration: underline;
+}
+
+/* Footer do Form */
+.form-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-footer a {
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+}
+
+/* Seção da Imagem (Direita) */
+.image-section {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-top-right-radius: 20px; /* Mantém o padrão arredondado interno */
+    border-bottom-right-radius: 20px;
+
+    position: absolute;
+    right: 0;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsividade Básica para Telas Menores */
+@media (max-width: 868px) {
+    .card-register {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .image-section {
+        display: none; /* Oculta a imagem em telas mobile para focar no form */
+    }
+    .navbar {
+        padding: 20px;
+    }
+    .nav-links a:not(.btn-sacola) {
+        display: none; /* Simplifica o menu no mobile */
+    }
+}

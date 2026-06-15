@@ -9,7 +9,7 @@ import { Observable, tap } from 'rxjs';
 export class AuthService {
 private readonly http = inject(HttpClient);
 private readonly router = inject(Router);
-private readonly apiUrl = "http://api-senai-angular.vercel.app/api";
+private readonly apiUrl = "https://api-senai-angular.vercel.app/api";
 private readonly TOKEN_KEY = 'auth_token';
 
 login(email: string, password: string): Observable<any> {

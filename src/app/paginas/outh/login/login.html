@@ -2,7 +2,7 @@
     <div class="frase-runway-fundo">RUNWAY</div>
     <div class="card-register">
         <div class="form-section">
-            <h2>Criar Conta</h2>
+            <h2>Login</h2>
 
             <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="input-group">
@@ -17,7 +17,13 @@
                     <i class="fa-regular fa-eye-slash toggle-password"></i>
                 </div>
 
-                <button type="submit" class="btn-submit">Entrar</button>
+                <button type="submit" class="btn-submit" [disabled]="estaCarregando()">
+                    @if(estaCarregando()){
+                        Entrando...
+                    } @else{
+                        Entrar
+                    }
+                    </button>
             </form>
 
             <p class="switch-page">Não possui uma conta? <a routerLink="/cadastro">Cadastre-se</a></p>

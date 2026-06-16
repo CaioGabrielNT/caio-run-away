@@ -1,0 +1,687 @@
+/* ================================================================
+   DESIGN SYSTEM — DEVBLOG × RUNWAY
+   Paleta escura e elegante inspirada no fashion e-commerce Runway.
+================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Cores — Tema Escuro Runway */
+  --cor-fundo:        #0d0d0d;
+  --cor-card:         #141414;
+  --cor-card-hover:   #1a1a1a;
+  --cor-borda:        rgba(255, 255, 255, 0.08);
+  --cor-borda-forte:  rgba(255, 255, 255, 0.16);
+
+  --cor-texto:        #f4f4f2;
+  --cor-texto-suave:  #8a8a8a;
+  --cor-cinza:        #555555;
+
+  --cor-acento:       #ffffff;
+  --cor-acento-hover: #ca8a04;
+  --cor-acento-claro: rgba(114, 47, 55, 1.0);
+
+  --cor-sucesso:      #22c55e;
+  --cor-erro:         #ef4444;
+
+  /* Tipografia Runway */
+  --fonte-titulo: 'Cormorant Garamond', serif;
+  --fonte-corpo:  'Jost', sans-serif;
+
+  /* Espaçamentos */
+  --espaco-xs:  4px;
+  --espaco-sm:  8px;
+  --espaco-md:  16px;
+  --espaco-lg:  24px;
+  --espaco-xl:  40px;
+  --espaco-2xl: 60px;
+
+  /* Bordas e sombras */
+  --raio:     10px;
+  --raio-sm:  6px;
+  --raio-pill: 999px;
+  --sombra-sm: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --sombra-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* Transição */
+  --transicao: 0.25s ease;
+}
+
+/* ================================================================
+   RESET
+================================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+ul { list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--fonte-corpo);
+}
+
+input,
+textarea,
+select {
+  font-family: var(--fonte-corpo);
+}
+
+/* ================================================================
+   MARCA D'ÁGUA LATERAL — Igual ao Runway
+================================================================ */
+.brand-watermark {
+  position: fixed;
+  top: 0;
+  left: 0.5rem;
+  width: 80px;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.brand-watermark span {
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 5rem;
+  color: rgba(255, 255, 255, 0.04);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ================================================================
+   CABEÇALHO
+================================================================ */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background-color: #0d0d0d;
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--cor-texto);
+}
+
+.logo span {
+  color: var(--cor-acento);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--cor-texto-suave);
+  transition: color var(--transicao);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  color: var(--cor-acento);
+}
+
+/* ================================================================
+   BOTÕES
+================================================================ */
+.btn-primario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--cor-acento);
+  color: #0d0d0d;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--raio-pill);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.btn-primario:hover {
+  background-color: var(--cor-acento-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--cor-texto-suave);
+  border: 1px solid var(--cor-borda-forte);
+  padding: 12px 24px;
+  border-radius: var(--raio-pill);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: border-color var(--transicao), color var(--transicao), transform var(--transicao);
+}
+
+.btn-secundario:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento);
+  transform: translateY(-2px);
+}
+
+.btn-sair {
+  background-color: transparent;
+  border: 1px solid var(--cor-borda-forte);
+  color: var(--cor-texto-suave);
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--raio-pill);
+  font-family: var(--fonte-corpo);
+  cursor: pointer;
+  transition: background-color var(--transicao), color var(--transicao), border-color var(--transicao);
+}
+
+.btn-sair:hover {
+  background-color: var(--cor-texto);
+  color: var(--cor-fundo);
+  border-color: var(--cor-texto);
+}
+
+/* ================================================================
+   CAMPOS DE FORMULÁRIO
+================================================================ */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.campo-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-sm);
+  font-size: 15px;
+  color: var(--cor-texto);
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+  outline: none;
+}
+
+.campo-input:focus {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.10);
+}
+
+.campo-input::placeholder {
+  color: var(--cor-cinza);
+}
+
+/* ================================================================
+   ESPAÇAMENTOS UTILITÁRIOS
+================================================================ */
+.mt-md { margin-top: var(--espaco-md); }
+.mt-lg { margin-top: var(--espaco-lg); }
+
+/* ================================================================
+   ANIMAÇÕES
+================================================================ */
+@keyframes rw-subir {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================================
+   LAYOUT DO EDITOR
+================================================================ */
+.editor-pagina {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 40px 60px 60px 80px; /* padding-left maior para a marca d'água */
+  min-height: calc(100vh - 73px);
+  align-items: start;
+}
+
+.editor-coluna-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.editor-coluna-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================================================================
+   CARDS DO EDITOR
+================================================================ */
+.editor-card {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 28px;
+  animation: rw-subir 0.45s ease both;
+}
+
+.editor-card-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-lg);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* ================================================================
+   CAMPO DE TÍTULO DO ARTIGO
+================================================================ */
+.input-titulo-artigo {
+  width: 100%;
+  font-family: var(--fonte-titulo);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--cor-texto);
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none;
+  line-height: 1.3;
+}
+
+.input-titulo-artigo::placeholder {
+  color: var(--cor-cinza);
+}
+
+/* ================================================================
+   DIVISOR
+================================================================ */
+.divisor {
+  border: none;
+  border-top: 1px solid var(--cor-borda);
+  margin: 16px 0;
+}
+
+/* ================================================================
+   BARRA DE FERRAMENTAS DO EDITOR
+================================================================ */
+.editor-barra-ferramentas {
+  display: flex;
+  gap: 4px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--cor-borda);
+  flex-wrap: wrap;
+}
+
+.editor-btn-ferramenta {
+  padding: 6px 10px;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-sm);
+  background-color: transparent;
+  font-size: 13px;
+  color: var(--cor-texto-suave);
+  transition: all var(--transicao);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.editor-btn-ferramenta:hover {
+  border-color: var(--cor-acento);
+  color: var(--cor-acento);
+  background-color: var(--cor-acento-claro);
+}
+
+/* ================================================================
+   TEXTAREA PRINCIPAL DO EDITOR
+================================================================ */
+.editor-textarea {
+  width: 100%;
+  min-height: 320px;
+  padding: 0;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--cor-texto-suave);
+  background: transparent;
+}
+
+.editor-textarea::placeholder {
+  color: var(--cor-cinza);
+}
+
+/* ================================================================
+   CONTADOR DE CARACTERES
+================================================================ */
+.contador-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.contador-caracteres {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--cor-cinza);
+}
+
+/* ================================================================
+   SELECT
+================================================================ */
+.campo-select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-sm);
+  font-size: 14px;
+  color: var(--cor-texto);
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: border-color var(--transicao);
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%238a8a8a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
+.campo-select:focus {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.10);
+}
+
+.campo-select option {
+  background-color: #1a1a1a;
+  color: var(--cor-texto);
+}
+
+/* ================================================================
+   TAGS / CHIPS
+================================================================ */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-sm);
+  min-height: 48px;
+  align-items: center;
+  transition: border-color var(--transicao);
+  cursor: text;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tags-container:focus-within {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.10);
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--cor-acento-claro);
+  color: var(--cor-acento);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--raio-pill);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tag-chip-remover {
+  background: none;
+  border: none;
+  color: var(--cor-acento);
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity var(--transicao);
+  cursor: pointer;
+}
+
+.tag-chip-remover:hover {
+  opacity: 1;
+}
+
+.tags-input-fantasma {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--cor-texto);
+  background: transparent;
+  min-width: 100px;
+  flex: 1;
+}
+
+.tags-input-fantasma::placeholder {
+  color: var(--cor-cinza);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* ================================================================
+   AÇÕES DO EDITOR
+================================================================ */
+.editor-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editor-acoes .btn-primario,
+.editor-acoes .btn-secundario {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ================================================================
+   UPLOAD DE CAPA
+================================================================ */
+.upload-capa {
+  border: 1px dashed var(--cor-borda-forte);
+  border-radius: var(--raio);
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.upload-capa:hover {
+  border-color: var(--cor-acento);
+  background-color: var(--cor-acento-claro);
+}
+
+.upload-capa-icone {
+  font-size: 28px;
+  color: var(--cor-texto-suave);
+}
+
+.upload-capa:hover .upload-capa-icone {
+  color: var(--cor-acento);
+}
+
+.upload-capa-texto {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  letter-spacing: 0.05em;
+}
+
+.upload-capa-sub {
+  font-size: 11px;
+  color: var(--cor-cinza);
+  letter-spacing: 0.05em;
+}
+
+/* ================================================================
+   PREVIEW CARD
+================================================================ */
+.preview-card {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  animation: rw-subir 0.45s ease 0.15s both;
+}
+
+.preview-capa-placeholder {
+  height: 140px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-cinza);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.preview-corpo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-tag-categoria {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--cor-acento);
+  font-weight: 600;
+}
+
+.preview-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--cor-texto);
+}
+
+.preview-meta {
+  font-size: 11px;
+  color: var(--cor-cinza);
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* ================================================================
+   RESPONSIVIDADE
+================================================================ */
+@media (max-width: 1024px) {
+  .editor-pagina {
+    grid-template-columns: 1fr;
+    padding: 32px 32px 60px 32px;
+  }
+
+  .brand-watermark {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 16px 24px;
+  }
+
+  .editor-pagina {
+    padding: 24px 16px 60px 16px;
+    gap: 16px;
+  }
+
+  .editor-card {
+    padding: 20px;
+  }
+
+  .input-titulo-artigo {
+    font-size: 22px;
+  }
+
+  .nav-link span,
+  .nav-link {
+    font-size: 12px;
+  }
+}

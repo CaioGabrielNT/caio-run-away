@@ -94,7 +94,7 @@ select {
   align-items: center;
   justify-content: space-between;
   padding: 20px 60px;
-  background-color: #ffffff; /* Fundo de card para se destacar do fundo bege */
+  background-color: #000000; /* Fundo de card para se destacar do fundo bege */
   border-bottom: 1px solid var(--cor-borda);
   position: sticky;
   top: 0;
@@ -104,7 +104,7 @@ select {
 .logo {
   font-family: var(--fonte-titulo);
   font-size: 28px;
-  color: var(--cor-texto);
+  color: #ffffff;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
@@ -127,13 +127,13 @@ select {
 .nav-link {
   font-size: 15px;
   font-weight: 500;
-  color: var(--cor-texto-suave);
+  color: #ffffff;
   transition: color var(--transicao);
 }
 
 .nav-link:hover,
 .nav-link.ativo {
-  color: var(--cor-acento-hover);
+  color: rgba(114, 47, 55, 1.0);
 }
 
 /* ================================================================

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Runway </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- MARCA D'ÁGUA LATERAL -->
+    <div class="brand-watermark" aria-hidden="true">
+      <span>RUNWAY</span>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+      <a href="/" class="logo">RUN<span>WAY</span></a>
+      <nav class="navbar">
+        <a href="/listagem" class="nav-link nav-link--ativo">Coleção</a>
+        <a href="#" class="nav-link">Categorias</a>
+        <a href="#" class="nav-link">Sobre</a>
+        <a href="/novo-artigo/index.html" class="btn-novo-artigo">
+          <i class="fas fa-plus"></i> Nova coleção
+        </a>
+      </nav>
+    </header>
+
+    <!-- HERO DA LISTAGEM -->
+    <section class="listagem-hero">
+      <p class="listagem-hero-sup">Coleções recentes</p>
+      <h1 class="listagem-hero-titulo">Coleções & Tutoriais</h1>
+      <p class="listagem-hero-sub">
+        Conteúdo sobre a coleção mais recente, dicas de moda, tendências e tudo o que você precisa para arrasar no estilo.
+      </p>
+    </section>
+
+    <!-- BARRA DE FILTROS -->
+    <div class="filtros-barra">
+      <div class="filtros-esquerda">
+        <button class="filtro-chip filtro-chip--ativo">Todos</button>
+        <button class="filtro-chip">Estilo</button>
+        <button class="filtro-chip">Moda</button>
+        <button class="filtro-chip">Tendências</button>
+        <button class="filtro-chip">Coleções</button>
+
+      </div>
+      <div class="filtros-direita">
+        <div class="busca-wrapper">
+          <i class="fas fa-search busca-icone"></i>
+          <input
+            class="busca-input"
+            type="text"
+            placeholder="Buscar artigos..."
+          />
+        </div>
+        <div class="ordenacao-wrapper">
+          <select class="campo-select-mini">
+            <option>Mais recentes</option>
+            <option>Mais lidos</option>
+            <option>A-Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESTAQUE (ARTIGO EM EVIDÊNCIA) -->
+    <section class="listagem-conteudo">
+
+      <div class="artigo-destaque">
+        <div class="artigo-destaque-capa">
+          <div class="artigo-destaque-capa-placeholder" aria-label="Imagem de capa do artigo em destaque">
+            <span class="capa-label-placeholder">Capa da coleção</span>
+          </div>
+        </div>
+        <div class="artigo-destaque-corpo">
+          <div class="artigo-destaque-meta">
+            <span class="artigo-categoria"></span>
+            <span class="artigo-dot" aria-hidden="true">·</span>
+            <span class="artigo-data">28 mai. 2026</span>
+            <span class="artigo-dot" aria-hidden="true">·</span>
+            <span class="artigo-leitura">7 min de leitura</span>
+          </div>
+          <h2 class="artigo-destaque-titulo">
+            O Guia Completo de Coleções para Arrasar no Estilo em 2026
+          </h2>
+          <p class="artigo-destaque-resumo">
+            Entenda de uma vez por todas como o CSS Grid funciona: áreas nomeadas, alinhamento, responsividade sem media queries e os novos recursos do nível 3 que estão chegando aos navegadores.
+          </p>
+          <div class="artigo-destaque-rodape">
+            <div class="autor-info">
+              <div class="autor-avatar" aria-hidden="true">N</div>
+              <div>
+                <p class="autor-nome">Joseph Runway</p>
+                <p class="autor-cargo">Estilista chefe</p>
+              </div>
+            </div>
+            <a href="#" class="btn-ler-artigo">
+              Ver coleção <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINHA SEPARADORA COM LABEL -->
+      <div class="separador-secao">
+        <span class="separador-label">Todas as coleções</span>
+        <div class="separador-linha" aria-hidden="true"></div>
+        <span class="separador-contagem">12 coleções</span>
+      </div>
+
+      <!-- GRADE DE ARTIGOS -->
+      <div class="artigos-grade">
+
+        <!-- ARTIGO 1 -->
+        <article class="artigo-card">
+          <div class="artigo-card-capa artigo-card-capa--html">
+            <span class="capa-label-placeholder">Seu armário</span>
+          </div>
+          <div class="artigo-card-corpo">
+            <div class="artigo-card-meta">
+              <span class="artigo-categoria">Moda</span>
+              <span class="artigo-dot" aria-hidden="true">·</span>
+              <span class="artigo-data">25 mai. 2026</span>
+            </div>
+            <h3 class="artigo-card-titulo">
+              Use essas coleçoes para arrasar no estilo em 2026
+            </h3>
+            <p class="artigo-card-resumo">
+                Dicas de moda para 2026, incluindo as tendências mais quentes, peças-chave para investir e como montar looks incríveis com o que você já tem no armário.
+            </p>
+            <div class="artigo-card-rodape">
+              <div class="artigo-tags">
+                <span class="tag-chip">Moda</span>
+                <span class="tag-chip">Profissional</span>
+              </div>
+              <a href="#" class="link-ler" aria-label="Ler artigo sobre Semântica HTML5">
+                Ver sua coleção mais recente <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTIGO 2 -->
+        <article class="artigo-card">
+          <div class="artigo-card-capa artigo-card-capa--js">
+            <span class="capa-label-placeholder">Looks</span>
+          </div>
+          <div class="artigo-card-corpo">
+            <div class="artigo-card-meta">
+              <span class="artigo-categoria">Estilo</span>
+              <span class="artigo-dot" aria-hidden="true">·</span>
+              <span class="artigo-data">20 mai. 2026</span>
+            </div>
+            <h3 class="artigo-card-titulo">
+              Monte seu look com as coleções mais famosas do mundo e arrase no estilo
+            </h3>
+            <p class="artigo-card-resumo">
+              Dicas para montar looks incríveis com as coleções mais famosas do mundo e chamar a atenção de todos.
+              </p>
+            <div class="artigo-card-rodape">
+              <div class="artigo-tags">
+                <span class="tag-chip">Passarela</span>
+                <span class="tag-chip">Profissional</span>
+              </div>
+              <a href="#" class="link-ler" aria-label="Ler artigo sobre Promises vs Async/Await">
+                Ver sua passarela com a sua coleção <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTIGO 3 -->
+        <article class="artigo-card">
+          <div class="artigo-card-capa artigo-card-capa--carreira">
+            <span class="capa-label-placeholder">FOTO DA COLEÇÃO</span>
+          </div>
+          <div class="artigo-card-corpo">
+            <div class="artigo-card-meta">
+              <span class="artigo-categoria">Carreira</span>
+              <span class="artigo-dot" aria-hidden="true">·</span>
+              <span class="artigo-data">15 mai. 2026</span>
+            </div>
+            <h3 class="artigo-card-titulo">
+              Como Montar sua colecão e chamar a atenção das marcas mais famosas do mundo
+            </h3>
+            <p class="artigo-card-resumo">
+              Dicas para construir uma coleção que impressione as marcas mais famosas do mundo e abra portas para oportunidades de parceria.
+            </p>
+            <div class="artigo-card-rodape">
+              <div class="artigo-tags">
+                <span class="tag-chip">Coleção</span>
+              </div>
+              <a href="#" class="link-ler" aria-label="Ler artigo sobre portfólio">
+                Ver sua coleção <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTIGO 4 -->
+        <article class="artigo-card">
+          <div class="artigo-card-capa artigo-card-capa--css">
+            <span class="capa-label-placeholder">Estilo</span>
+          </div>
+          <div class="artigo-card-corpo">
+            <div class="artigo-card-meta">
+              <span class="artigo-categoria"></span>
+              <span class="artigo-dot" aria-hidden="true">·</span>
+              <span class="artigo-data">10 mai. 2026</span>
+            </div>
+            <h
+            3 class="artigo-card-titulo">
+            Como usar as coleções para criar looks incríveis e arrasar no estilo em 2026
+            </h3>
+            <p class="artigo-card-resumo">
+                Dicas para usar as coleções para criar looks incríveis e arrasar no estilo em 2026, incluindo as tendências mais quentes, peças-chave para investir e como montar looks incríveis com o que você já tem no armário.
+            </p>
+            <div class="artigo-card-rodape">
+              <div class="artigo-tags">
+                <span class="tag-chip">Coleção</span>
+                <span class="tag-chip">Estilo</span>
+              </div>
+              <a href="#" class="link-ler" aria-label="Ler artigo sobre variáveis CSS">
+                Ver sua coleção <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+    
+
+    </section>
+      <!-- PAGINAÇÃO -->
+      <nav class="paginacao" aria-label="Navegação de páginas">
+        <button class="paginacao-btn paginacao-btn--desabilitado" disabled aria-label="Página anterior">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="paginacao-pagina paginacao-pagina--ativa" aria-current="page">1</button>
+        <button class="paginacao-pagina">2</button>
+        <button class="paginacao-pagina">3</button>
+        <span class="paginacao-reticencias" aria-hidden="true">...</span>
+        <button class="paginacao-btn" aria-label="Próxima página">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </nav>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+      <div class="rodape-inner">
+        <a href="/" class="logo rodape-logo">Run<span>way</span></a>
+        <p class="rodape-texto">
+          Runway é uma plataforma de conteúdo dedicada a compartilhar as últimas tendências, dicas e insights sobre moda, estilo e tudo o que envolve o universo fashion. Nossa missão é inspirar e empoderar nossos leitores a expressarem sua individualidade através da moda, oferecendo conteúdo de alta qualidade, atualizado e relevante para todos os amantes do estilo.
+        </p>
+        <p class="rodape-copy">&copy; 2026 Run<span>way</span>. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

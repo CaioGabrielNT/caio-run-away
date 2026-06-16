@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUNWAY</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="acesso.css" />
+  </head>
+  <body>
+
+    <!-- MARCA D'ÁGUA LATERAL -->
+    <div class="brand-watermark" aria-hidden="true">
+      <span>RUNWAY</span>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+      <a href="/" class="logo">RUN<span>WAY</span></a>
+      <nav class="navbar">
+        <a href="/dashboard" class="nav-link">
+          <i class="fas fa-arrow-left"></i> Voltar ao painel
+        </a>
+        <a href="/login" class="btn-sair">Sair</a>
+      </nav>
+    </header>
+
+    <!-- ÁREA DO EDITOR -->
+    <div class="editor-pagina">
+
+      <!-- COLUNA PRINCIPAL -->
+      <div class="editor-coluna-principal">
+
+        <!-- CARD 1: Título e Editor Textual -->
+        <div class="editor-card">
+          <div class="campo-grupo">
+            <label class="campo-label">Título da coleção</label>
+            <textarea
+              class="input-titulo-artigo"
+              placeholder="Digite um título incrível..."
+              rows="2"
+            ></textarea>
+          </div>
+
+          <hr class="divisor" />
+
+          <!-- BARRA DE FERRAMENTAS -->
+          <div class="editor-barra-ferramentas">
+            <button class="editor-btn-ferramenta"><strong>N</strong></button>
+            <button class="editor-btn-ferramenta"><em>I</em></button>
+            <button class="editor-btn-ferramenta"><u>S</u></button>
+            <button class="editor-btn-ferramenta">H1</button>
+            <button class="editor-btn-ferramenta">H2</button>
+            <button class="editor-btn-ferramenta">
+              <i class="fas fa-list-ul"></i> Lista
+            </button>
+            <button class="editor-btn-ferramenta">
+              <i class="fas fa-link"></i> Link
+            </button>
+            <button class="editor-btn-ferramenta">
+              <i class="fas fa-image"></i> Imagem
+            </button>
+          </div>
+
+          <div class="campo-grupo">
+            <textarea
+              class="editor-textarea"
+              placeholder="Escreva o conteúdo da sua coleção aqui..."
+            ></textarea>
+            <div class="contador-wrapper">
+              <span class="contador-caracteres">0 / 5000 caracteres</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Resumo -->
+        <div class="editor-card">
+          <h2 class="editor-card-titulo">Resumo da coleção</h2>
+          <div class="campo-grupo">
+            <label class="campo-label">
+              Descrição curta (aparece nos cards públicos da listagem)
+            </label>
+            <textarea
+              class="campo-input"
+              rows="3"
+              placeholder="Um parágrafo curto que resume a coleção..."
+              style="resize: vertical;"
+            ></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUNA LATERAL -->
+      <div class="editor-coluna-lateral">
+
+        <!-- CARD 1: Publicação -->
+        <div class="editor-card">
+          <h2 class="editor-card-titulo">Publicação</h2>
+
+          <div class="campo-grupo">
+            <label class="campo-label" for="status">Status</label>
+            <select class="campo-select" id="status">
+              <option value="rascunho">Rascunho</option>
+              <option value="publicado">Publicado</option>
+            </select>
+          </div>
+
+          <div class="campo-grupo mt-md">
+            <label class="campo-label" for="categoria">Categoria</label>
+            <select class="campo-select" id="categoria">
+              <option>Selecione...</option>
+              <option>Roupas</option>
+              <option>Perfumes</option>
+              <option>Bolsas</option>
+              <option>Joias</option>
+            </select>
+          </div>
+
+          <!-- TAGS -->
+          <div class="campo-grupo mt-md">
+            <label class="campo-label">Tags</label>
+            <div class="tags-container">
+              <span class="tag-chip">
+                Coleção de Roupas
+                <button class="tag-chip-remover" aria-label="Remover tag HTML">×</button>
+              </span>
+              <span class="tag-chip">
+                Coleção de Joias
+                <button class="tag-chip-remover" aria-label="Remover tag Iniciante">×</button>
+              </span>
+              <span class="tag-chip">
+                Coleção de Perfumes
+                <button class="tag-chip-remover" aria-label="Remover tag Iniciante">×</button>
+              </span>
+              <span class="tag-chip">
+                Coleção de Bolsas
+                <button class="tag-chip-remover" aria-label="Remover tag Iniciante">×</button>
+              </span>
+              <input
+                class="tags-input-fantasma"
+                type="text"
+                placeholder="+ Adicionar tag"
+              />
+            </div>
+          </div>
+
+          <div class="editor-acoes mt-lg">
+            <button class="btn-primario">
+              Publicar coleção <i class="fas fa-paper-plane"></i>
+            </button>
+            <button class="btn-secundario">Salvar rascunho</button>
+          </div>
+        </div>
+
+        <!-- CARD 2: Imagem de Capa -->
+        <div class="editor-card">
+          <h2 class="editor-card-titulo">Imagem de capa</h2>
+          <div class="upload-capa">
+            <div class="upload-capa-icone">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <p class="upload-capa-texto">Clique para escolher uma imagem</p>
+            <p class="upload-capa-sub">PNG, JPG, WEBP · Máx. 2MB</p>
+          </div>
+        </div>
+
+        </div>
+
+  </body>
+</html>

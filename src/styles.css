@@ -185,8 +185,8 @@ select {
 }
 
 .btn-sair {
-  background-color: transparent;
-  border: 1.5px solid var(--cor-texto);
+  background-color: #fff;
+  border: 1.5px solid #fff;
   padding: 8px 20px;
   font-size: 14px;
   font-weight: 500;
@@ -195,7 +195,7 @@ select {
 }
 
 .btn-sair:hover {
-  background-color: var(--cor-texto);
+  background-color: #000000;
   color: var(--cor-fundo);
 }
 

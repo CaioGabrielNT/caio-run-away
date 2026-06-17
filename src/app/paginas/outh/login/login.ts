@@ -25,7 +25,10 @@ export class Login {
     const { email, password } = this.loginForm.getRawValue()
 
     this.authservice.login(email!, password!).subscribe({
-      next: () => alert("Login realizado com sucesso!"),
+      next: () => {
+        alert("Login realizado com sucesso!")
+        this.router.navigate(['/admin/dashboard'])
+      },
       error: () => {
         this.estaCarregando.set(false);
         alert("Usuário ou senha inválidos!")

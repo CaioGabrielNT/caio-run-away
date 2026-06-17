@@ -12,4 +12,16 @@ export class ModaService {
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl + "/moda")
   }
+
+  create(formData: FormData): Observable<any> {
+    return this.http.post(this.apiUrl + "/moda", formData)
+  }
+
+  update(formData: FormData, id: any): Observable<any> {
+    return this.http.put(this.apiUrl + "/moda/" + id, formData)
+  }
+
+delete(id: any): Observable<any> {
+    return this.http.delete(this.apiUrl + "/moda/" + id)
+  }
 }

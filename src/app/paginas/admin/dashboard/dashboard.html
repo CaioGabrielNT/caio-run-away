@@ -1,1 +1,103 @@
-<p>dashboard works!</p>
+<div class="dashboard-wrapper">
+  
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h2>RUNWAY Admin</h2>
+    </div>
+    <nav class="sidebar-menu">
+      <ul>
+        <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <!-- <li><a href="artigos.html"><i class="fas fa-newspaper"></i> Artigos</a></li> -->
+        <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+        <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-container">
+    
+    <header class="top-header">
+      <div class="header-busca">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Buscar no painel...">
+      </div>
+      <div class="header-perfil">
+        <span class="user-name">Administrador</span>
+        <img src="assets/avatar-placeholder.png" alt="Avatar" class="avatar">
+      </div>
+    </header>
+
+    <main class="dashboard-conteudo">
+      
+      <div class="dashboard-cards">
+        <div class="card">
+          <div class="card-info">
+            <h3>Coleções Totais</h3>
+            <p>12</p>
+          </div>
+          <i class="fas fa-file-alt icon-card"></i>
+        </div>
+        <div class="card">
+          <div class="card-info">
+            <h3>Visualizações Totais</h3>
+            <p>24.5k</p>
+          </div>
+          <i class="fas fa-eye icon-card"></i>
+        </div>
+      </div>
+
+      <div class="dashboard-secao">
+        <div class="dashboard-secao-header">
+          <h2 class="dashboard-secao-titulo">Coleções</h2>
+          <a
+            routerLink="/admin/create"
+            class="btn-primario"
+            style="padding: 10px 20px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"
+          >
+            <i class="fas fa-plus"></i> Adicionar Nova Coleção
+          </a>
+        </div>
+
+        @if (isloading()) {
+          <div class="loading-container">
+            <i class="fas fa-spinner fa-spin"></i> Carregando Dados...
+          </div>
+        } @else {
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Categoria</th>
+                <th>Status</th>
+                <th>Visualizações</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                @for (item of moda(); track $index) {
+                  <tr>
+                <td><span class="tabela-titulo-artigo">{{item.nome}}</span></td>
+                <td>
+                  <span class="badge badge-vinho"><i class="fab fa-html5"></i> {{item.categoria}}</span>
+                </td>
+                <td>
+                  <span class="badge badge-verde"><i class="fas fa-check"></i> Publicado </span>
+                </td>
+                <td>{{ gerarAleatorio()  }}</td>
+                <td>
+                  <div class="tabela-acoes">
+                    <button class="btn-acao">Editar</button>
+                    <button class="btn-perigo">Excluir</button>
+                  </div>
+                </td>
+              </tr>  
+                }
+              
+            </tbody>
+          </table>
+        }
+      </div>
+    </main>
+
+  </div>
+</div>

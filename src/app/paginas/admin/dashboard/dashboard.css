@@ -1,0 +1,230 @@
+/* Layout Base - Identidade Visual de Moda */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9fa; /* Fundo off-white sofisticado */
+  font-family: 'Playfair Display', 'Helvetica Neue', sans-serif;
+  color: #1a1a1a;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #111111; /* Preto absoluto editorial */
+  color: #ffffff;
+  padding: 30px 20px;
+}
+
+.sidebar-brand h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li a {
+  color: #999999;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.sidebar-menu li a:hover, 
+.sidebar-menu li a.active {
+  color: #ffffff;
+  background-color: #222222;
+  border-radius: 4px;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.header-busca input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 250px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Cartões de Métricas */
+.dashboard-cards {
+  display: flex;
+  gap: 24px;
+  padding: 40px 40px 10px 40px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 0; /* Bordas retas trazem aspecto mais premium */
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+}
+
+.card h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777777;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.icon-card {
+  font-size: 24px;
+  color: #cccccc;
+}
+
+/* Estilização da Tabela Baseada no seu Arquivo */
+.dashboard-secao {
+  padding: 30px 40px;
+}
+
+.dashboard-secao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-secao-titulo {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+}
+
+.tabela th {
+  background-color: #fafdff;
+  text-align: left;
+  padding: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555555;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.tabela td {
+  padding: 16px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+.tabela-titulo-artigo {
+  font-weight: 500;
+  color: #111111;
+}
+
+/* Badges de Moda Elegantes */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px; /* Estilo pílula moderno */
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.badge-vinho { background-color: #f5e6e8; color: #722f37; }
+.badge-Grafite { background-color: #e9ecef; color: #495057; }
+.badge-verde { background-color: #e6f4ea; color: #137333; }
+.badge-dourado { background-color: #fef7e0; color: #b06000; }
+
+/* Botões Modificados */
+.btn-primario {
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.btn-primario:hover {
+  background-color: #333333;
+}
+
+.tabela-acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-acao {
+  background: transparent;
+  border: 1px solid #111111;
+  color: #111111;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-acao:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.btn-perigo {
+  background: transparent;
+  border: 1px solid #fa5252;
+  color: #fa5252;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-perigo:hover {
+  background: #fa5252;
+  color: #ffffff;
+}
+
+.loading-container {
+  padding: 40px;
+  text-align: center;
+  color: #777777;
+  font-style: italic;
+}

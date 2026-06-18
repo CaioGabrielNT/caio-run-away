@@ -8,7 +8,7 @@
         <li><a routerLink="/" class="nav-link">Contato</a></li>
       </ul>
       @if(authService.isLoggedIn()){
-        <a routerLink="/painelAdmin" class="btn-sair">Painel Admin</a>
+        <a routerLink="/admin/" class="btn-sair">Painel Admin</a>
 
         <button type="button" (click)="authService.logout()" class="btn-perigo">sair</button>
       } @else{

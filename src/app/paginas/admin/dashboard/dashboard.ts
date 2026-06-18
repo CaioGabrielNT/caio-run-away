@@ -1,10 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ModaService } from '../../../core/services/moda';
 import { ModaModel } from '../../../core/models/moda';
+import { NgClass } from "../../../../../node_modules/@angular/common/types/_common_module-chunk";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -33,4 +35,7 @@ isloading = signal(true);
 
 }
 
+gerarAleatorio(): number {
+  return Math.floor(Math.random() * 10000);
+}
 }

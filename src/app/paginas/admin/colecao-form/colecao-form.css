@@ -1,0 +1,58 @@
+:root {
+  --cor-texto: #222;
+  --cor-texto-suave: #666;
+  --cor-borda: #ddd;
+  --cor-acento: #000000;
+  --raio-sm: 8px;
+  --transicao: 0.2s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.campo-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  font-size: 15px;
+  color: var(--cor-texto);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.campo-input:focus {
+  border-color: var(--cor-acento);
+  box-shadow: 0 0 0 3px rgba(232, 93, 38, 0.12);
+}
+
+button[type="submit"] {
+  padding: 14px;
+  border: none;
+  border-radius: var(--raio-sm);
+  color:#000000
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}

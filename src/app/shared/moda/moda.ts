@@ -8,6 +8,9 @@ import { ModaModel } from '../../core/models/moda';
   styleUrl: './moda.css',
 })
 export class Moda {
+  create(formData: FormData) {
+    throw new Error('Method not implemented.');
+  }
 
   data = input.required<ModaModel>()
 }

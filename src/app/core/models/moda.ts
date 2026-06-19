@@ -1,4 +1,5 @@
 export interface ModaModel{
+imagem: any;
 visualizacoes: any; 
     id: string;
     nome: string;

@@ -1,33 +1,93 @@
+<form [formGroup]="colecaoForm" (ngSubmit)="onSubmit()" class="colecao-form">
+  <div class="artigo-card">
+    <div class="artigo-card__header">
+      <h1 class="artigo-card__title">Nova coleção</h1>
+      <p class="artigo-card__subtitle">Preencha os dados para criar uma nova coleção</p>
+    </div>
 
+    <div class="campo-grupo">
+      <label for="titulo" class="campo-label">Título</label>
+      <input
+        type="text"
+        id="titulo"
+        name="titulo"
+        class="campo-input"
+        placeholder="Digite o título"
+        required
+        formControlName="titulo"
+      />
+    </div>
 
+    <div class="campo-grupo">
+      <label for="descricao" class="campo-label">Descrição</label>
+      <textarea
+        id="descricao"
+        name="descricao"
+        class="campo-input"
+        placeholder="Digite a descrição"
+        rows="5"
+        required
+        formControlName="descricao"
+      ></textarea>
+    </div>
 
+    <div class="linha-campos">
+      <div class="campo-grupo">
+        <label for="categoria" class="campo-label">Categoria</label>
+        <input
+          type="text"
+          id="categoria"
+          name="categoria"
+          class="campo-input"
+          placeholder="Digite a categoria"
+          required
+          formControlName="categoria"
+        />
+      </div>
 
-<form>
-  <div class="campo-grupo">
-    <label class="campo-label" for="nome">Nome</label>
-    <input class="campo-input" type="text" id="nome" placeholder="Digite o nome">
+      <div class="campo-grupo">
+        <label for="tempo_leitura" class="campo-label">Tempo de leitura (minutos)</label>
+        <input
+          type="number"
+          id="tempo_leitura"
+          name="tempo_leitura"
+          class="campo-input"
+          placeholder="Ex: 5"
+          min="1"
+          required
+          formControlName="tempo_leitura"
+        />
+      </div>
+    </div>
+
+    <div class="linha-campos">
+      <div class="campo-grupo">
+        <label for="imagem" class="campo-label">Imagem</label>
+        <input
+          type="file"
+          id="imagem"
+          name="imagem"
+          class="campo-input"
+          accept=".jpg,.png"
+          required
+        />
+      </div>
+
+      <div class="campo-grupo">
+        <label for="data_publicacao" class="campo-label">Data de publicação</label>
+        <input
+          type="date"
+          id="data_publicacao"
+          name="data_publicacao"
+          class="campo-input"
+          required
+          formControlName="data_publicacao"
+        />
+      </div>
+    </div>
+
+    <div class="artigo-card__footer">
+      <button type="submit" class="btn-primario">Salvar</button>
+    </div>
   </div>
-
-  <div class="campo-grupo">
-    <label class="campo-label" for="categoria">Categoria</label>
-    <input class="campo-input" type="text" id="categoria" placeholder="Digite a categoria">
-  </div>
-
-  <div class="campo-grupo">
-    <label class="campo-label" for="preco">Preço</label>
-    <input class="campo-input" type="number" id="preco" placeholder="Digite o preço">
-  </div>
-
-  <div class="campo-grupo">
-    <label class="campo-label" for="tag">Tag</label>
-    <input class="campo-input" type="text" id="tag" placeholder="Digite a tag">
-  </div>
-
-  <div class="campo-grupo">
-    <label class="campo-label" for="imagem">Imagem</label>
-    <input class="campo-input" type="file" id="imagem">
-  </div>
-
-  <button type="submit">Salvar</button>
 </form>
-

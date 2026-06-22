@@ -71,10 +71,11 @@
 }
 
 .avatar {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 80%;
   object-fit: cover;
+  object-position: top;
 }
 
 /* Cartões de Métricas */
@@ -208,17 +209,22 @@
   color: #ffffff;
 }
 
-.btn-perigo {
-  background: transparent;
-  border: 1px solid #fa5252;
-  color: #fa5252;
-  padding: 6px 12px;
+.btn-perigos {
+background-color: transparent;
+  border: 1px solid var(--cor-borda-forte);
+  color: var(--cor-texto-suave);
+  padding: 8px 20px;
   font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--raio-pill);
+  font-family: var(--fonte-corpo);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color var(--transicao), color var(--transicao), border-color var(--transicao);
 }
-.btn-perigo:hover {
-  background: #fa5252;
+.btn-perigos:hover {
+  background: #966161;
   color: #ffffff;
 }
 

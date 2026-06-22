@@ -17,6 +17,7 @@ export class ColecaoForm {
     categoria: new FormControl(''),
     preco: new FormControl(''),
     tag: new FormControl(''),
+    descricao: new FormControl(''),
   });
 
   onFileSelected(event: Event): void {

@@ -35,6 +35,21 @@ isloading = signal(true);
 
 }
 
+deleteModa(id: string): void {
+  if(!confirm("Tem certeza que deseja excluir esta coleção?")) {
+    return; 
+  }
+  this.modaService.delete(id).subscribe({
+    next: () => {
+      alert("Coleção excluída com sucesso!");
+      this.loadModa();
+    },
+    error: (err) => {
+      alert(err.error?.error || "🤦‍♂️ Erro ao excluir a coleção!");
+    }
+  })
+}
+
 gerarAleatorio(): number {
   return Math.floor(Math.random() * 10000);
 }

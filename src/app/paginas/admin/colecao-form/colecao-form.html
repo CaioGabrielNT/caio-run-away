@@ -6,15 +6,15 @@
     </div>
 
     <div class="campo-grupo">
-      <label for="titulo" class="campo-label">Título</label>
+      <label for="titulo" class="campo-label">Nome</label>
       <input
         type="text"
-        id="titulo"
-        name="titulo"
+        id="nome"
+        name="nome"
         class="campo-input"
-        placeholder="Digite o título"
+        placeholder="Digite o nome da coleção"
         required
-        formControlName="titulo"
+        formControlName="nome"
       />
     </div>
 
@@ -45,17 +45,16 @@
         />
       </div>
 
-      <div class="campo-grupo">
-        <label for="tempo_leitura" class="campo-label">Tempo de leitura (minutos)</label>
+      <div class="preço-grupo">
+        <label for="preço" class="preço-label">Preço</label>
         <input
           type="number"
-          id="tempo_leitura"
-          name="tempo_leitura"
-          class="campo-input"
-          placeholder="Ex: 5"
-          min="1"
+          id="preço"
+          name="preço"
+          class="preço-input"          
+          placeholder="Digite o preço"
           required
-          formControlName="tempo_leitura"
+          formControlName="preco"
         />
       </div>
     </div>
@@ -70,18 +69,19 @@
           class="campo-input"
           accept=".jpg,.png"
           required
+          (change)="onFileSelected( $event)"
         />
       </div>
 
       <div class="campo-grupo">
-        <label for="data_publicacao" class="campo-label">Data de publicação</label>
+        <label for="data_publicacao" class="campo-label">Tag</label>
         <input
           type="date"
-          id="data_publicacao"
-          name="data_publicacao"
+          id="tag"
+          name="tag"
           class="campo-input"
           required
-          formControlName="data_publicacao"
+          formControlName="tag"
         />
       </div>
     </div>

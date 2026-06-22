@@ -19,7 +19,7 @@ form {
   box-shadow: 0 4px 20px rgba(0,0,0,.08);
 }
 
-.campo-grupo {
+.preço-grupo {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -31,7 +31,7 @@ form {
   color: var(--cor-texto-suave);
 }
 
-.campo-input {
+.preço-input {
   width: 100%;
   padding: 13px 16px;
   border: 1.5px solid var(--cor-borda);
@@ -42,7 +42,7 @@ form {
   box-sizing: border-box;
 }
 
-.campo-input:focus {
+.preço-input:focus {
   border-color: var(--cor-acento);
   box-shadow: 0 0 0 3px rgba(232, 93, 38, 0.12);
 }
@@ -51,7 +51,7 @@ button[type="submit"] {
   padding: 14px;
   border: none;
   border-radius: var(--raio-sm);
-  color:#000000
+  color:#000000;
   color: white;
   font-size: 15px;
   cursor: pointer;

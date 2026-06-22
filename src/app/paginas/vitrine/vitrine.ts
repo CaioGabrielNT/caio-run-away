@@ -18,6 +18,8 @@ export class Vitrine implements OnInit {
   ngOnInit(): void {
     this.modaService.getAll().subscribe((res) => {
       this.moda.set(res);
+      console.log(res);
+      
     });
   }
 }

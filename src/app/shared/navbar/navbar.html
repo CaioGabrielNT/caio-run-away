@@ -3,14 +3,14 @@
     <nav class="navbar">
       <ul class="nav-lista">
         <li><a routerLink="/" class="nav-link ativo">Início</a></li>
-        <li><a routerLink="/" class="nav-link">Catálogo</a></li>
+        <li><a routerLink="/vitrine" class="nav-link">Catálogo</a></li>
         <li><a routerLink="/" class="nav-link">Sobre</a></li>
         <li><a routerLink="/" class="nav-link">Contato</a></li>
       </ul>
       @if(authService.isLoggedIn()){
         <a routerLink="/admin/" class="btn-sair">Painel Admin</a>
 
-        <button type="button" (click)="authService.logout()" class="btn-perigo">sair</button>
+        <button type="button" (click)="authService.logout()" class="btn-sair">sair</button>
       } @else{
         <a routerLink="/login" class="btn-sair">Login</a>
 

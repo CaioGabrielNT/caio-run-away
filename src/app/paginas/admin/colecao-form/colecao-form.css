@@ -1,10 +1,23 @@
 :root {
   --cor-texto: #222;
-  --cor-texto-suave: #666;
-  --cor-borda: #ddd;
+  --cor-texto-suave: #000000;
+  --cor-borda: #000000;
   --cor-acento: #000000;
   --raio-sm: 8px;
   --transicao: 0.2s ease;
+}
+.brand-watermark {
+  position: fixed;         /* Fica fixa na tela durante o scroll */
+  top: 0;
+  left: 0.5rem;            /* Alinhada no canto esquerdo com um pequeno recuo */
+  width: 80px;
+  height: 100vh;
+  z-index: 1;              /* Fica por trás de quase tudo, mas visível */
+  pointer-events: none;    /* Impede que atrapalhe cliques em links ou botões */
+  user-select: none;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 form {
@@ -14,7 +27,7 @@ form {
   max-width: 500px;
   margin: 30px auto;
   padding: 24px;
-  background: #00000077;
+  background: #000000;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,.08);
 }
@@ -40,11 +53,13 @@ form {
   color: var(--cor-texto);
   outline: none;
   box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 .preço-input:focus {
   border-color: var(--cor-acento);
-  box-shadow: 0 0 0 3px rgba(232, 93, 38, 0.12);
+  box-shadow: 0 0 0 3px rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 button[type="submit"] {

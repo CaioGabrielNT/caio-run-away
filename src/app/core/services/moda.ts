@@ -12,6 +12,9 @@ export class ModaService {
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl + "/moda")
   }
+   getById(id: any): Observable<any> {
+    return this.http.get(this.apiUrl + "/moda/" + id)
+  }
 
   create(formData: FormData): Observable<any> {
     return this.http.post(this.apiUrl + "/moda", formData)

@@ -1,7 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ModaService } from '../../../core/services/moda';
 import { ModaModel } from '../../../core/models/moda';
-import { NgClass } from "../../../../../node_modules/@angular/common/types/_common_module-chunk";
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -11,6 +10,12 @@ import { RouterLink } from "@angular/router";
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
+colecao() {
+throw new Error('Method not implemented.');
+}
+colecoes() {
+throw new Error('Method not implemented.');
+}
 
 private readonly modaService = inject(ModaService);
 

@@ -6,4 +6,5 @@ export interface ModaModel {
   preco: number;
   tag: string;
   imagem_url: string;
+  descricao: string;
 }

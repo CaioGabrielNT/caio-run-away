@@ -1,34 +1,41 @@
 <div class="dashboard-wrapper">
-  
   <aside class="sidebar">
     <div class="sidebar-brand">
       <h2>RUNWAY Admin</h2>
     </div>
     <nav class="sidebar-menu">
       <ul>
-        <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li>
+          <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+        </li>
         <!-- <li><a href="artigos.html"><i class="fas fa-newspaper"></i> Artigos</a></li> -->
-        <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
-        <li><a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a></li>
+        <li>
+          <a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a>
+        </li>
+        <li>
+          <a href="configuracoes.html"><i class="fas fa-cog"></i> Configurações</a>
+        </li>
       </ul>
     </nav>
   </aside>
 
   <div class="main-container">
-    
     <header class="top-header">
       <div class="header-busca">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Buscar no painel...">
+        <input type="text" placeholder="Buscar no painel..." />
       </div>
       <div class="header-perfil">
         <span class="user-name">Administrador</span>
-        <img src="https://i.pinimg.com/736x/ee/ab/7f/eeab7f5c28b4df9bd6239a656bf87846.jpg" alt="Avatar" class="avatar">
+        <img
+          src="https://i.pinimg.com/736x/ee/ab/7f/eeab7f5c28b4df9bd6239a656bf87846.jpg"
+          alt="Avatar"
+          class="avatar"
+        />
       </div>
     </header>
 
     <main class="dashboard-conteudo">
-      
       <div class="dashboard-cards">
         <div class="card">
           <div class="card-info">
@@ -52,17 +59,46 @@
           <a
             routerLink="/admin/create"
             class="btn-primario"
-            style="padding: 10px 20px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"
+            style="
+              padding: 10px 20px;
+              font-size: 13px;
+              text-decoration: none;
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+            "
           >
             <i class="fas fa-plus"></i> Adicionar Nova Coleção
           </a>
         </div>
 
         @if (isloading()) {
-          <div class="loading-container">
-            <i class="fas fa-spinner fa-spin"></i> Carregando Dados...
+          <div class="flex items-center gap-2 text-slate-600 ">
+            <svg
+              class="animate-spin h-5 w-5 text-slate-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+            <span class="text-sm">Carregando...</span>
           </div>
         } @else {
+
+          @if (colecoes().length == 0) {
+            <div class=" flex items-start gap-3 rounded-lg border
+            border-red 200 bg-red-50 px-4 py-3 text-red 700 "> </div> 
+            <p class="text">Não existem coleções cadastradas. Por favor, adicione uma nova coleção.</p>
+          }
           <table class="tabela">
             <thead>
               <tr>
@@ -74,30 +110,32 @@
               </tr>
             </thead>
             <tbody>
-                @for (item of moda(); track $index) {
-                  <tr>
-                <td><span class="tabela-titulo-artigo">{{item.nome}}</span></td>
-                <td>
-                  <span class="badge badge-vinho"><i class="fab fa-html5"></i> {{item.categoria}}</span>
-                </td>
-                <td>
-                  <span class="badge badge-verde"><i class="fas fa-check"></i> Publicado </span>
-                </td>
-                <td>{{ gerarAleatorio()  }}</td>
-                <td>
-                  <div class="tabela-acoes">
-                    <button class="btn-acao">Editar</button>
-                    <button class="btn-perigo" (click)="deleteModa(item.id)">Excluir</button>
-                  </div>
-                </td>
-              </tr>  
-                }
-              
+              @for (item of moda(); track $index) {
+                <tr>
+                  <td>
+                    <span class="tabela-titulo-artigo">{{ item.nome }}</span>
+                  </td>
+                  <td>
+                    <span class="badge badge-vinho"
+                      ><i class="fab fa-html5"></i> {{ item.categoria }}</span
+                    >
+                  </td>
+                  <td>
+                    <span class="badge badge-verde"><i class="fas fa-check"></i> Publicado </span>
+                  </td>
+                  <td>{{ gerarAleatorio() }}</td>
+                  <td>
+                    <div class="tabela-acoes">
+                      <a class="btn-acao" [routerLink]="['/admin/edit', item.id]">Editar</a>
+                      <button class="btn-perigo" (click)="deleteModa(item.id)">Excluir</button>
+                    </div>
+                  </td>
+                </tr>
+              }
             </tbody>
           </table>
         }
       </div>
     </main>
-
   </div>
 </div>

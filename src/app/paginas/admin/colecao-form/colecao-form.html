@@ -1,7 +1,8 @@
 <form [formGroup]="colecaoForm" (ngSubmit)="onSubmit()" class="colecao-form">
+  
   <div class="artigo-card">
     <div class="artigo-card__header">
-      <h1 class="artigo-card__title">Nova coleção</h1>
+      <h1>{{id ? 'Editar coleção' : 'Criar coleção'}}</h1>
       <p class="artigo-card__subtitle">Preencha os dados para criar uma nova coleção</p>
     </div>
 

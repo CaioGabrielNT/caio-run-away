@@ -1,0 +1,214 @@
+/* ==========================================================================
+   CONFIGURAÇÃO GERAL (CONCEITO RUNWAY)
+   ========================================================================== */
+:host {
+  display: block;
+  background-color: #0d0d0d !important;
+  color: #ffffff !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ==========================================================================
+   BANNER HERO DA VITRINE (IMAGEM FIXADA COM OVERLAY DE CINEMA)
+   ========================================================================== */
+.moda-banner {
+  position: relative;
+  height: 60vh; /* Altura imponente, mas menor que a Home para focar nos produtos */
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  /* Reutiliza a sua imagem de fachada com o mesmo efeito de overlay */
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.5) 0%,
+    rgba(13, 13, 13, 0.3) 40%,
+    rgba(13, 13, 13, 1) 100%
+  ), url('https://i.pinimg.com/736x/51/13/f2/5113f2c151a9ac5be20ee206fc930587.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.moda-banner-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.moda-banner-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  margin-bottom: 1.2rem;
+}
+
+.moda-banner-sub {
+  max-width: 540px;
+  font-weight: 300;
+  color: #f4f4f2;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Marca d'água flutuante de fundo baseada no seu padrão */
+.banner-numero-fundo {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20vw;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.02);
+  bottom: -2rem;
+  right: 5%;
+  pointer-events: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   BARRA DE CONTROLES E FILTROS (REMOÇÃO COMPLETA DA FAIXA BRANCA)
+   ========================================================================== */
+.moda-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 4rem 2rem 7rem; /* Recuo para respeitar a marca d'água lateral fixa */
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid #2c2c2c; /* Linha sutil do divider */
+  background-color: #0d0d0d;
+}
+
+/* Input de busca integrado ao tema escuro */
+.busca-container {
+  display: flex;
+  align-items: center;
+  background: #464545; /* Cinza quase preto imperceptível */
+  border: 1px solid #2c2c2c;
+  padding: 12px 18px;
+  width: 320px;
+  border-radius: 999px; /* Formato pílula igual aos botões */
+  transition: all 0.3s ease;
+}
+
+.busca-container:focus-within {
+  border-color: #ffffff;
+  background: #0d0d0d;
+}
+
+.busca-icone {
+  color: #8a8a8a;
+  font-size: 13px;
+  margin-right: 12px;
+}
+
+.busca-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  font-family: 'Jost', sans-serif;
+}
+
+.busca-input::placeholder {
+  color: #ffffff;
+}
+
+/* Lista de botões de Filtro */
+.filtros-lista {
+  display: flex;
+  gap: 10px;
+}
+
+.filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #2c2c2c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.filtro-btn.ativo {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   GRADE DE VITRINE PRINCIPAL
+   ========================================================================== */
+.vitrine-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 4rem 8rem 7rem; /* Mantém o recuo padrão para o design */
+}
+
+.vitrine-titulo {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+}
+
+/* Grid simétrico e responsivo */
+.vitrine {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 50px 30px;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .moda-controles, .vitrine-container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .moda-controles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding-top: 3rem;
+  }
+  
+  .busca-container {
+    width: 100%;
+  }
+  
+  .filtros-lista {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Scroll fluido no mobile */
+  }
+}

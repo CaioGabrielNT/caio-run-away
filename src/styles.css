@@ -90,7 +90,7 @@ select {
   justify-content: space-between;
   padding: 20px 60px;
   background-color: #000000; /* Fundo de card para se destacar do fundo bege */
-  border-bottom: 1px solid var(--cor-borda);
+  border-bottom: 1px solid rgb(0, 0, 0);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -206,7 +206,7 @@ select {
 .campo-label {
   font-size: 13px;
   font-weight: 500;
-  color: var(--cor-texto-suave);
+  color: var(--cor-texto-suve);
   letter-spacing: 0.3px;
 }
 

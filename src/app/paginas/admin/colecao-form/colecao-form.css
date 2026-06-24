@@ -1,73 +1,171 @@
-:root {
-  --cor-texto: #222;
-  --cor-texto-suave: #000000;
-  --cor-borda: #000000;
-  --cor-acento: #000000;
-  --raio-sm: 8px;
-  --transicao: 0.2s ease;
-}
-.brand-watermark {
-  position: fixed;         /* Fica fixa na tela durante o scroll */
-  top: 0;
-  left: 0.5rem;            /* Alinhada no canto esquerdo com um pequeno recuo */
-  width: 80px;
-  height: 100vh;
-  z-index: 1;              /* Fica por trás de quase tudo, mas visível */
-  pointer-events: none;    /* Impede que atrapalhe cliques em links ou botões */
-  user-select: none;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+/* ==========================================================================
+   FORMULÁRIO DE COLEÇÕES (RUNWAY EDITORIAL STYLE)
+   ========================================================================== */
+
+/* Escopo do Componente / Fundo Geral */
+:host {
+  display: block;
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Jost', sans-serif;
+  color: #ffffff;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 24px;
-  background: #000000;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+/* Container do Formulário */
+.colecao-form {
+  max-width: 650px; /* Aumentado levemente para acomodar melhor os campos em linha */
+  margin: 0 auto;
+  background: #111111; /* Preto fosco para destacar sutilmente do fundo da página */
+  border: 1px solid #1a1a1a;
+  border-radius: 0; /* Bordas retas mantendo a estética sofisticada */
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.preço-grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* Cabeçalho do Card */
+.artigo-card__header {
+  margin-bottom: 35px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 20px;
 }
 
-.campo-label {
+.artigo-card__header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.artigo-card__subtitle {
+  color: #ffffff;
   font-size: 13px;
-  font-weight: 500;
-  color: var(--cor-texto-suave);
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
-.preço-input {
+/* Estrutura de Grupos e Campos */
+.campo-grupo, .preço-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex: 1; /* Garante distribuição igual nas linhas duplas */
+}
+
+/* Labels Tipografadas em Estilo Minimalista */
+.campo-label, .preço-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+/* Inputs, Textarea e Inputs de Preço/Data Padronizados */
+.campo-input, .preço-input {
   width: 100%;
-  padding: 13px 16px;
-  border: 1.5px solid var(--cor-borda);
-  border-radius: var(--raio-sm);
-  font-size: 15px;
-  color: var(--cor-texto);
+  padding: 12px 16px;
+  background-color: #0d0d0d; /* Fundo escuro interno */
+  border: 1px solid #2c2c2c; /* Borda fina e discreta */
+  border-radius: 4px; /* Arredondamento sutil apenas para acabamento */
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
   outline: none;
   box-sizing: border-box;
-  background-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.preço-input:focus {
-  border-color: var(--cor-acento);
-  box-shadow: 0 0 0 3px rgb(255, 255, 255);
-  background-color: #ffffff;
+/* Textarea específico */
+textarea.campo-input {
+  resize: vertical;
+  line-height: 1.6;
 }
 
-button[type="submit"] {
-  padding: 14px;
-  border: none;
-  border-radius: var(--raio-sm);
-  color:#000000;
-  color: white;
-  font-size: 15px;
+/* Estilização para o Input do tipo File (Upload de Imagem) */
+input[type="file"].campo-input {
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #8a8a8a;
   cursor: pointer;
+}
+
+input[type="file"].campo-input::-webkit-file-upload-button {
+  background: #2c2c2c;
+  border: none;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+input[type="file"].campo-input::-webkit-file-upload-button:hover {
+  background: #444444;
+}
+
+/* Efeito de Foco nos Inputs */
+.campo-input:focus, .preço-input:focus {
+  border-color: #ffffff; /* A borda acende em branco puro */
+  background-color: #050505;
+}
+
+/* Placeholder customizado para sumir no escuro de forma elegante */
+.campo-input::placeholder, .preço-input::placeholder {
+  color: #444444;
+}
+
+/* Alinhamento de Linhas Duplas (Ex: Categoria + Preço) */
+.linha-campos {
+  display: flex;
+  gap: 20px;
+}
+
+/* Rodapé e Botão de Ação */
+.artigo-card__footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita para um fluxo visual melhor */
+}
+
+.btn-primario {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 12px 35px;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE DO FORMULÁRIO
+   ========================================================================== */
+@media (max-width: 600px) {
+  .linha-campos {
+    flex-direction: column;
+    gap: 0;
+  }
+  .colecao-form {
+    padding: 24px;
+  }
 }

@@ -1,0 +1,166 @@
+/* ==========================================================================
+   CARD DE PRODUTO INDIVIDUAL (RUNWAY EDITORIAL STYLE)
+   ========================================================================== */
+
+/* Configuração do Host (Escopo do Componente Angular) */
+:host {
+  display: block;
+  background: transparent !important;
+}
+
+/* Container Principal do Card */
+.card-produto {
+  display: flex;
+  flex-direction: column;
+  background: transparent !important; /* Limpa o fundo branco antigo */
+  border-radius: 0 !important; /* Bordas retas e sofisticadas */
+  box-shadow: none !important; /* Remove sombras genéricas */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  padding: 16;
+}
+
+/* Wrapper da Imagem (Proporção Editorial 3:4) */
+.imagem-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Mantém a foto vertical clássica de alta costura */
+  overflow: hidden;
+  background-color: #111111;
+  border: 1px solid #1a1a1a;
+}
+
+.imagem-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efeito Hover na Imagem */
+.card-produto:hover .imagem-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Tag "Novidade" no estilo Dark Glassmorphism */
+.tag-destaque {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff !important;
+  border: 1px solid #2c2c2c;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 999px; /* Formato pílula icônico da Runway */
+  z-index: 2;
+  
+}
+
+/* Bloco de Informações do Produto */
+.info-produto {
+  padding: 20px 0 0 0 !important; /* Zera os paddings internos para alinhar com o grid */
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Substituição da Badge Laranja Sólida por Texto Minimalista */
+.badge-laranja {
+  background: transparent !important; /* Remove o fundo laranja */
+  color: #ffffff !important; /* Cinza sutil da página de início */
+  padding: 0 !important;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-laranja i {
+  font-size: 11px;
+  color: #8a8a8a; /* Mantém o ícone discreto */
+}
+
+/* Título Serifado Elegante */
+.nome-produto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff !important;
+  margin: 0 0 12px 0;
+  padding: 24px;
+}
+
+/* Descrição do Produto (Caso use no futuro) */
+.descricao-produto {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #8a8a8a;
+  font-weight: 300;
+}
+
+/* Rodapé do Card (Preço + Botão) */
+.produto-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Formatação do Preço */
+.preco {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  padding:24px;
+}
+
+/* Modificação do botão para o estilo .btn-outline da Home */
+.btn-primario {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid #2c2c2c !important;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 18px;
+  border-radius: 999px; /* Formato pílula idêntico aos botões do site */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primario i {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito Hover Reverso no Botão */
+.btn-primario:hover {
+  background: #ffffff !important;
+  color: #0d0d0d !important;
+  border-color: #ffffff !important;
+}
+
+.btn-primario:hover i {
+  transform: translateX(3px); /* Sutil empurrãozinho na flecha ao passar o mouse */
+}

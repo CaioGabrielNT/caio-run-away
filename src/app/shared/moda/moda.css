@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   background: transparent !important; /* Limpa o fundo branco antigo */
-  border-radius: 0 !important; /* Bordas retas e sofisticadas */
+  border-radius: 30px !important; /* Bordas retas e sofisticadas */
   box-shadow: none !important; /* Remove sombras genéricas */
   overflow: hidden;
   cursor: pointer;
@@ -29,6 +29,7 @@
   overflow: hidden;
   background-color: #111111;
   border: 1px solid #1a1a1a;
+  
 }
 
 .imagem-wrapper img {
@@ -36,6 +37,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 0 !important; /* Mantém bordas retas na imagem */
 }
 
 /* Efeito Hover na Imagem */
@@ -87,11 +89,13 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  
 }
 
 .badge-laranja i {
   font-size: 11px;
   color: #8a8a8a; /* Mantém o ícone discreto */
+  padding: 10px;
 }
 
 /* Título Serifado Elegante */
@@ -103,6 +107,7 @@
   color: #ffffff !important;
   margin: 0 0 12px 0;
   padding: 24px;
+
 }
 
 /* Descrição do Produto (Caso use no futuro) */

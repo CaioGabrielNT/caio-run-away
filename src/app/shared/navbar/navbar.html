@@ -2,20 +2,16 @@
     <a routerLink="/" class="logo">RUNWAY<span></span></a>
     <nav class="navbar">
       <ul class="nav-lista">
-        <li><a routerLink="/" class="nav-link ativo">Início</a></li>
-        <li><a routerLink="/vitrine" class="nav-link">Catálogo</a></li>
-        <li><a routerLink="/" class="nav-link">Sobre</a></li>
-        <li><a routerLink="/" class="nav-link">Contato</a></li>
+        <li><a routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="ativo" class="nav-link">Início</a></li>
+        <li><a routerLink="/vitrine" routerLinkActive="ativo" class="nav-link">Catálogo</a></li>
+        <li><a routerLink="/sobre" routerLinkActive="ativo" class="nav-link">Sobre</a></li>
       </ul>
+      
       @if(authService.isLoggedIn()){
         <a routerLink="/admin/" class="btn-sair">Painel Admin</a>
-
         <button type="button" (click)="authService.logout()" class="btn-sair">sair</button>
       } @else{
         <a routerLink="/login" class="btn-sair">Login</a>
-
       }
-
     </nav>
-  </header>
-
+</header>

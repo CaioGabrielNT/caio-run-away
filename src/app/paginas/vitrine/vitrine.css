@@ -122,6 +122,7 @@
   font-size: 14px;
   width: 100%;
   font-family: 'Jost', sans-serif;
+  
 }
 
 .busca-input::placeholder {
@@ -196,7 +197,6 @@
   
   .moda-controles {
     flex-direction: column;
-    align-items: stretch;
     gap: 1.5rem;
     padding-top: 3rem;
   }

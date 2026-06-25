@@ -36,7 +36,7 @@ html, body {
   font-size: 3rem;         /* Tamanho gigante imponente */
   font-weight: 600;
   letter-spacing: 5rem;    /* Espaçamento chic entre as palavras */
-  color: rgba(255, 255, 255, 0.05); /* Apenas 2% de opacidade, super sutil */
+  color: rgba(255, 255, 255, 0.123); /* Apenas 2% de opacidade, super sutil */
   writing-mode: vertical-rl; /* Gira o texto para ficar vertical */
   text-transform: uppercase;
   white-space: nowrap;

@@ -222,10 +222,6 @@ select {
   outline: none;
 }
 
-.campo-input:focus {
-  border-color: var(--cor-acento);
-  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.12);
-}
 
 .campo-input::placeholder {
   color: #bbb;

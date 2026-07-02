@@ -87,7 +87,7 @@
   max-width: 1400px;
   margin: 0 auto;
   border-bottom: 1px solid #2c2c2c;
-  background-color: #0d0d0d;
+  background-color: #00000000;
 }
 
 /* Input de busca integrado ao tema escuro */
@@ -109,7 +109,7 @@
 
 .busca-icone {
   color: #8a8a8a;
-  font-size: 12px;
+  font-size: 1px;
   margin-right: 12px;
 }
 

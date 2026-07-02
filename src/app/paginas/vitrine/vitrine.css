@@ -101,6 +101,7 @@
   width: 100%;
   border-radius: 99px;
   transition: all 0.3s ease;
+  position: fixed;
 }
 
 .busca-container:focus-within {

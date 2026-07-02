@@ -1,5 +1,6 @@
 /* ==========================================================================
    FORMULÁRIO DE COLEÇÕES (RUNWAY EDITORIAL STYLE)
+   MOBILE-FIRST
    ========================================================================== */
 
 /* Escopo do Componente / Fundo Geral */
@@ -7,32 +8,32 @@
   display: block;
   background-color: #0d0d0d;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 24px 16px;
   font-family: 'Jost', sans-serif;
   color: #ffffff;
 }
 
 /* Container do Formulário */
 .colecao-form {
-  max-width: 650px; /* Aumentado levemente para acomodar melhor os campos em linha */
+  max-width: 650px;
   margin: 0 auto;
-  background: #111111; /* Preto fosco para destacar sutilmente do fundo da página */
+  background: #111111;
   border: 1px solid #1a1a1a;
-  border-radius: 0; /* Bordas retas mantendo a estética sofisticada */
-  padding: 40px;
+  border-radius: 0;
+  padding: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Cabeçalho do Card */
 .artigo-card__header {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   border-bottom: 1px solid #1a1a1a;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
 }
 
 .artigo-card__header h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -42,7 +43,7 @@
 
 .artigo-card__subtitle {
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.5px;
 }
@@ -52,8 +53,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 24px;
-  flex: 1; /* Garante distribuição igual nas linhas duplas */
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 /* Labels Tipografadas em Estilo Minimalista */
@@ -68,12 +69,12 @@
 /* Inputs, Textarea e Inputs de Preço/Data Padronizados */
 .campo-input, .preço-input {
   width: 100%;
-  padding: 12px 16px;
-  background-color: #0d0d0d; /* Fundo escuro interno */
-  border: 1px solid #2c2c2c; /* Borda fina e discreta */
-  border-radius: 4px; /* Arredondamento sutil apenas para acabamento */
+  padding: 12px 14px;
+  background-color: #0d0d0d;
+  border: 1px solid #2c2c2c;
+  border-radius: 4px;
   font-family: 'Jost', sans-serif;
-  font-size: 14px;
+  font-size: 16px; /* evita zoom automático em iOS */
   color: #ffffff;
   outline: none;
   box-sizing: border-box;
@@ -98,7 +99,7 @@ input[type="file"].campo-input::-webkit-file-upload-button {
   background: #2c2c2c;
   border: none;
   color: #ffffff;
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 2px;
   cursor: pointer;
   margin-right: 10px;
@@ -114,34 +115,36 @@ input[type="file"].campo-input::-webkit-file-upload-button:hover {
 
 /* Efeito de Foco nos Inputs */
 .campo-input:focus, .preço-input:focus {
-  border-color: #ffffff; /* A borda acende em branco puro */
+  border-color: #ffffff;
   background-color: #050505;
 }
 
-/* Placeholder customizado para sumir no escuro de forma elegante */
+/* Placeholder customizado */
 .campo-input::placeholder, .preço-input::placeholder {
   color: #444444;
 }
 
-/* Alinhamento de Linhas Duplas (Ex: Categoria + Preço) */
+/* Linha de Campos: empilhada por padrão (mobile) */
 .linha-campos {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 0;
 }
 
 /* Rodapé e Botão de Ação */
 .artigo-card__footer {
-  margin-top: 40px;
+  margin-top: 32px;
   display: flex;
-  justify-content: flex-end; /* Alinha o botão à direita para um fluxo visual melhor */
+  justify-content: center;
 }
 
 .btn-primario {
+  width: 100%;
   background-color: #ffffff;
   color: #0d0d0d;
   border: 1px solid #ffffff;
   border-radius: 4px;
-  padding: 12px 35px;
+  padding: 14px 35px;
   font-family: 'Jost', sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -158,14 +161,48 @@ input[type="file"].campo-input::-webkit-file-upload-button:hover {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE DO FORMULÁRIO
+   BREAKPOINT: TABLET / DESKTOP (min-width)
    ========================================================================== */
-@media (max-width: 600px) {
-  .linha-campos {
-    flex-direction: column;
-    gap: 0;
+@media (min-width: 601px) {
+  :host {
+    padding: 40px 20px;
   }
+
   .colecao-form {
-    padding: 24px;
+    padding: 40px;
+  }
+
+  .artigo-card__header {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+  }
+
+  .artigo-card__header h1 {
+    font-size: 32px;
+  }
+
+  .artigo-card__subtitle {
+    font-size: 13px;
+  }
+
+  .campo-grupo, .preço-grupo {
+    margin-bottom: 24px;
+  }
+
+  .campo-input, .preço-input {
+    font-size: 14px;
+  }
+
+  .linha-campos {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .artigo-card__footer {
+    justify-content: flex-end;
+  }
+
+  .btn-primario {
+    width: auto;
   }
 }

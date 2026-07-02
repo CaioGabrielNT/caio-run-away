@@ -12,24 +12,23 @@
 .card-produto {
   display: flex;
   flex-direction: column;
-  background: transparent !important; /* Limpa o fundo branco antigo */
-  border-radius: 30px !important; /* Bordas retas e sofisticadas */
-  box-shadow: none !important; /* Remove sombras genéricas */
+  background: transparent !important;
+  border-radius: 20px !important; /* Levemente menor no mobile */
+  box-shadow: none !important;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.4s ease;
-  padding: 16;
+  padding: 12px;
 }
 
 /* Wrapper da Imagem (Proporção Editorial 3:4) */
 .imagem-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4; /* Mantém a foto vertical clássica de alta costura */
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background-color: #111111;
   border: 1px solid #1a1a1a;
-  
 }
 
 .imagem-wrapper img {
@@ -37,7 +36,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 0 !important; /* Mantém bordas retas na imagem */
+  border-radius: 0 !important;
 }
 
 /* Efeito Hover na Imagem */
@@ -48,72 +47,66 @@
 /* Tag "Novidade" no estilo Dark Glassmorphism */
 .tag-destaque {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 12px;
+  right: 12px;
   background: rgba(13, 13, 13, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #ffffff !important;
   border: 1px solid #2c2c2c;
   font-family: 'Jost', sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 6px 14px;
-  border-radius: 999px; /* Formato pílula icônico da Runway */
+  letter-spacing: 1.2px;
+  padding: 5px 12px;
+  border-radius: 999px;
   z-index: 2;
-  
 }
 
 /* Bloco de Informações do Produto */
 .info-produto {
-  padding: 20px 0 0 0 !important; /* Zera os paddings internos para alinhar com o grid */
+  padding: 16px 0 0 0 !important;
   background: transparent !important;
   display: flex;
   flex-direction: column;
-  
 }
 
-/* Substituição da Badge Laranja Sólida por Texto Minimalista */
+/* Badge minimalista (substitui a badge laranja sólida) */
 .badge-laranja {
-  background: transparent !important; /* Remove o fundo laranja */
-  color: #ffffff !important; /* Cinza sutil da página de início */
+  background: transparent !important;
+  color: #ffffff !important;
   padding: 0 !important;
   font-family: 'Jost', sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  letter-spacing: 1.6px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 6px;
-  
 }
 
 .badge-laranja i {
-  font-size: 11px;
-  color: #8a8a8a; /* Mantém o ícone discreto */
-  padding: 10px;
+  font-size: 10px;
+  color: #8a8a8a;
 }
 
 /* Título Serifado Elegante */
 .nome-produto {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #ffffff !important;
-  margin: 0 0 12px 0;
-  padding: 24px;
-
+  margin: 0 0 10px 0;
 }
 
-/* Descrição do Produto (Caso use no futuro) */
+/* Descrição do Produto */
 .descricao-produto {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #8a8a8a;
   font-weight: 300;
 }
@@ -129,24 +122,23 @@
 /* Formatação do Preço */
 .preco {
   font-family: 'Jost', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: #ffffff;
-  padding:24px;
 }
 
-/* Modificação do botão para o estilo .btn-outline da Home */
+/* Botão no estilo .btn-outline da Home */
 .btn-primario {
   background: transparent !important;
   color: #ffffff !important;
   border: 1px solid #2c2c2c !important;
   font-family: 'Jost', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 8px 18px;
-  border-radius: 999px; /* Formato pílula idêntico aos botões do site */
+  padding: 7px 16px;
+  border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -167,5 +159,56 @@
 }
 
 .btn-primario:hover i {
-  transform: translateX(3px); /* Sutil empurrãozinho na flecha ao passar o mouse */
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   BREAKPOINT: DESKTOP/TABLET (min-width: 769px)
+   Reforça o caráter editorial em telas maiores
+   ========================================================================== */
+@media (min-width: 769px) {
+  .card-produto {
+    border-radius: 30px !important;
+    padding: 16px;
+  }
+
+  .tag-destaque {
+    top: 15px;
+    right: 15px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+  }
+
+  .info-produto {
+    padding: 20px 0 0 0 !important;
+  }
+
+  .badge-laranja {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .badge-laranja i {
+    font-size: 11px;
+  }
+
+  .nome-produto {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .descricao-produto {
+    font-size: 0.9rem;
+  }
+
+  .preco {
+    font-size: 15px;
+  }
+
+  .btn-primario {
+    font-size: 11px;
+    padding: 8px 18px;
+  }
 }
